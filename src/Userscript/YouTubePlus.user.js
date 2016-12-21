@@ -1623,6 +1623,7 @@
                     }
                     ${is_small}.player-height:not(.watch-playlist) {
                         height: ${max_width / (16 / 9)}px !important;
+			max-height: 100vh;
                     }
                     ${is_small}#watch-appbar-playlist {
                         top: ${max_width / (16 / 9) - (is_small === "" ? 0 : 360)}px !important;
