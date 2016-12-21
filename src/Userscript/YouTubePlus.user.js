@@ -247,6 +247,7 @@
                             <div><input id='GEN_HDE_RECM_SDBR' type='checkbox'><label for='GEN_HDE_RECM_SDBR' data-p='tnd|GEN_HDE_RECM_SDBR'></label>\n<a href='https://github.com/ParticleCore/Particle/wiki/Features#hide_recom_sidebar'   data-p='ttl|FTR_DESC' target='features'>?</a></div>
                             <div><input id='GEN_HDE_SRCH_SDBR' type='checkbox'><label for='GEN_HDE_SRCH_SDBR' data-p='tnd|GEN_HDE_SRCH_SDBR'></label>\n<a href='https://github.com/ParticleCore/Particle/wiki/Features#hide_search_sidebar'  data-p='ttl|FTR_DESC' target='features'>?</a></div>
                             <div><input id='GEN_HDE_CHN_SDBR'  type='checkbox'><label for='GEN_HDE_CHN_SDBR'  data-p='tnd|GEN_HDE_CHN_SDBR'> </label>\n<a href='https://github.com/ParticleCore/Particle/wiki/Features#hide_channel_sidebar' data-p='ttl|FTR_DESC' target='features'>?</a></div>
+                            <div><input id='GEN_UNST_HDR'      type='checkbox'></input><label for='GEN_UNST_HDR'      data-p='tnd|GEN_UNST_HDR'>     <svg><use xlink:href='#ytp-svg-checkmark'/></svg></label>\n<a href='https://github.com/ParticleCore/Particle/wiki/Features#unstick_header' data-p='ttl|FTR_DESC' target='features'>?</a></div>
                         </div>`;
                     if (user_settings.GEN_LOCL_LANG && user_settings.localLang) {
                         temp.content.querySelector(".P-implang").dataset.p = "GLB_LOCL_LANG_CSTM";
@@ -1736,6 +1737,9 @@
                     if (window.location.href.split("/feed/subscriptions").length < 2) {
                         document.documentElement.classList.remove("part_grid_subs");
                     }
+                    if(user_settings.GEN_UNST_HDR){
+						document.getElementById("masthead-positioner").style.position = "initial";
+					}
                 }
             }
             function defaultChannelPage(event) {
@@ -2039,6 +2043,7 @@
                 GEN_INF_SCRL    : true,
                 GEN_BLUE_GLOW   : true,
                 GEN_PPOT_ON     : true,
+                GEN_UNST_HDR    : false,
                 VID_END_SHRE    : true,
                 VID_DFLT_QLTY   : "auto",
                 VID_PLST_ATPL   : true,
@@ -2111,6 +2116,7 @@
                 GEN_REM_APUN          : "Remove autoplay up next",
                 GEN_SPF_OFF           : "Disable SPF",
                 GEN_HIDE_FTR          : "Hide footer",
+                GEN_UNST_HDR          : "Unstick header",
                 GEN_BLUE_GLOW         : "Remove blue glow around clicked buttons",
                 GEN_HDE_RECM_SDBR     : "Hide recommended channels sidebar",
                 GEN_HDE_SRCH_SDBR     : "Hide search results sidebar",
